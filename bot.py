@@ -1,11 +1,11 @@
 from colors import Colors
-from cleverbot import Cleverbot
+from cleverwrap import CleverWrap
 import pyttsx
 from filter import Filter
 
 class Bot:
   def __init__(self, tName, tColor, tVoice, tVoiceRate, tFilter):
-    self.mCb = Cleverbot(tName)
+    self.mCb = CleverWrap("CCCsrAj9GISCVeMvQqFbE0IFc4w")
     self.mName = tName
     self.mColor = tColor
     self.mVoice = tVoice
@@ -14,7 +14,7 @@ class Bot:
     
   def ask(self, tQuestion):
     #tQuestion = self.mFilter.removeUnicode(tQuestion)
-    tReply = self.mCb.ask(tQuestion)
+    tReply = self.mCb.say(tQuestion)
     tReply = self.mFilter.filter(tReply)
     self.type(tReply)
     self.say(tReply)
